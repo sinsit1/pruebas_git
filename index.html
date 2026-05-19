@@ -1,13 +1,493 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <h1>Proyecto de pruebas git</h1>
-    
+  <title>Luxury Portfolio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Outfit',sans-serif;
+    }
+
+    body{
+      background:#f8f5f1;
+      color:#111827;
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND */
+    .bg-shape{
+      position:absolute;
+      border-radius:9999px;
+      filter:blur(120px);
+      opacity:.2;
+      z-index:0;
+    }
+
+    /* CONTAINER */
+    .container-custom{
+      width:min(1250px,90%);
+      margin:auto;
+    }
+
+    /* HERO TITLE */
+    .hero-title{
+      font-size:clamp(4rem,8vw,8rem);
+      line-height:.92;
+      font-weight:800;
+      letter-spacing:-4px;
+    }
+
+    .section-title{
+      font-size:clamp(2.5rem,5vw,5rem);
+      line-height:1;
+      font-weight:700;
+      letter-spacing:-2px;
+    }
+
+    /* BUTTONS */
+    .btn{
+      transition:.3s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* CARD */
+    .card{
+      transition:.35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    /* GLASS */
+    .glass{
+      background:rgba(255,255,255,.6);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,.6);
+    }
+
+    /* GRADIENT TEXT */
+    .gradient-text{
+      background:linear-gradient(to right,#a16207,#f59e0b,#fbbf24);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* SHADOW */
+    .luxury-shadow{
+      box-shadow:
+      0 10px 40px rgba(0,0,0,.06),
+      0 2px 10px rgba(0,0,0,.03);
+    }
+
+  </style>
+</head>
+
+<body class="relative">
+
+  <!-- BLURS -->
+  <div class="bg-shape bg-yellow-400 w-[500px] h-[500px] top-0 left-0"></div>
+  <div class="bg-shape bg-orange-300 w-[400px] h-[400px] bottom-0 right-0"></div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#f8f5f1]/80 backdrop-blur-xl border-b border-black/5">
+
+    <div class="container-custom">
+
+      <div class="h-24 flex items-center justify-between">
+
+        <a href="#home"
+           class="text-3xl font-extrabold tracking-tight">
+          LUXE.
+        </a>
+
+        <nav class="hidden md:flex items-center gap-12 text-sm font-medium text-gray-600">
+
+          <a href="#home" class="hover:text-black transition">
+            Inicio
+          </a>
+
+          <a href="#projects" class="hover:text-black transition">
+            Proyectos
+          </a>
+
+          <a href="#about" class="hover:text-black transition">
+            Sobre mí
+          </a>
+
+          <a href="#contact" class="hover:text-black transition">
+            Contacto
+          </a>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center relative z-10">
+
+    <div class="container-custom pt-32">
+
+      <div class="grid lg:grid-cols-2 gap-24 items-center">
+
+        <!-- LEFT -->
+        <div>
+
+          <span class="glass px-5 py-2 rounded-full text-amber-700 text-sm inline-block mb-8 luxury-shadow">
+            Premium Designer & Frontend Developer
+          </span>
+
+          <h1 class="hero-title mb-10">
+
+            Elegancia
+            digital
+            para marcas
+            modernas.
+
+          </h1>
+
+          <p class="text-gray-600 text-xl leading-relaxed max-w-xl mb-12">
+
+            Creo experiencias visuales sofisticadas con diseño minimalista,
+            estética premium y desarrollo frontend moderno.
+
+          </p>
+
+          <div class="flex flex-wrap gap-5">
+
+            <a href="#projects"
+               class="btn bg-black text-white px-8 py-5 rounded-full font-medium luxury-shadow">
+              Ver portfolio
+            </a>
+
+            <a href="#contact"
+               class="btn glass px-8 py-5 rounded-full font-medium luxury-shadow">
+              Contactar
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="relative">
+
+          <!-- MAIN IMAGE -->
+          <div class="relative rounded-[3rem] overflow-hidden luxury-shadow">
+
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-[750px] object-cover"
+            >
+
+          </div>
+
+          <!-- FLOATING CARD -->
+          <div class="absolute -bottom-10 -left-10 glass p-8 rounded-[2rem] luxury-shadow">
+
+            <h3 class="text-5xl font-extrabold gradient-text mb-3">
+              +8
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed">
+              Años creando experiencias digitales premium.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-32 relative z-10">
+
+    <div class="container-custom">
+
+      <div class="text-center mb-24">
+
+        <span class="uppercase tracking-[0.3em] text-amber-600 text-sm font-semibold">
+          Portfolio
+        </span>
+
+        <h2 class="section-title mt-6">
+
+          Últimos
+          <span class="gradient-text">
+            proyectos
+          </span>
+
+        </h2>
+
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="card bg-white rounded-[2.5rem] overflow-hidden luxury-shadow">
+
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+            class="h-72 w-full object-cover"
+          >
+
+          <div class="p-8">
+
+            <span class="text-amber-600 text-sm font-semibold uppercase">
+              Dashboard
+            </span>
+
+            <h3 class="text-3xl font-bold mt-4 mb-5">
+              Finance Platform
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Dashboard premium diseñado para startups y fintech modernas.
+            </p>
+
+            <a href="#contact"
+               class="font-semibold text-black">
+              Ver proyecto →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="card bg-black text-white rounded-[2.5rem] overflow-hidden luxury-shadow">
+
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+            class="h-72 w-full object-cover"
+          >
+
+          <div class="p-8">
+
+            <span class="text-amber-400 text-sm font-semibold uppercase">
+              SaaS
+            </span>
+
+            <h3 class="text-3xl font-bold mt-4 mb-5">
+              Luxury Website
+            </h3>
+
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Landing moderna enfocada en conversión y branding premium.
+            </p>
+
+            <a href="#contact"
+               class="font-semibold text-amber-400">
+              Explorar →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="card glass rounded-[2.5rem] overflow-hidden luxury-shadow">
+
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop"
+            class="h-72 w-full object-cover"
+          >
+
+          <div class="p-8">
+
+            <span class="text-amber-600 text-sm font-semibold uppercase">
+              Mobile
+            </span>
+
+            <h3 class="text-3xl font-bold mt-4 mb-5">
+              Mobile Experience
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Aplicación móvil con diseño elegante y navegación intuitiva.
+            </p>
+
+            <a href="#contact"
+               class="font-semibold text-black">
+              Descubrir →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-32 relative z-10">
+
+    <div class="container-custom">
+
+      <div class="glass rounded-[3rem] p-12 md:p-20 luxury-shadow">
+
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+          <div>
+
+            <span class="uppercase tracking-[0.3em] text-amber-600 text-sm font-semibold">
+              Sobre mí
+            </span>
+
+            <h2 class="section-title mt-6">
+
+              Diseño
+              sofisticado
+              y funcional
+
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p class="text-gray-600 text-lg leading-relaxed">
+
+              Mi enfoque combina minimalismo, branding y experiencia de usuario
+              para crear productos digitales visualmente impactantes y modernos.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-32 relative z-10">
+
+    <div class="container-custom">
+
+      <div class="bg-black rounded-[3rem] p-12 md:p-20 text-center luxury-shadow">
+
+        <span class="uppercase tracking-[0.3em] text-amber-400 text-sm font-semibold">
+          Contacto
+        </span>
+
+        <h2 class="section-title text-white mt-6 mb-8">
+
+          Creamos algo
+          increíble juntos.
+
+        </h2>
+
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-14">
+
+          Disponible para proyectos premium, diseño web y desarrollo frontend.
+
+        </p>
+
+        <form class="grid gap-6 max-w-3xl mx-auto">
+
+          <input
+            type="text"
+            placeholder="Nombre"
+            class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white outline-none focus:border-amber-400"
+          >
+
+          <input
+            type="email"
+            placeholder="Email"
+            class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white outline-none focus:border-amber-400"
+          >
+
+          <textarea
+            rows="6"
+            placeholder="Cuéntame sobre tu proyecto..."
+            class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white outline-none focus:border-amber-400 resize-none"
+          ></textarea>
+
+          <button
+            class="btn bg-amber-400 text-black py-5 rounded-2xl font-bold">
+            Enviar mensaje
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-black/5 relative z-10">
+
+    <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <h3 class="text-3xl font-extrabold">
+        LUXE.
+      </h3>
+
+      <div class="flex gap-8 text-gray-500">
+
+        <a href="#home" class="hover:text-black transition">
+          Inicio
+        </a>
+
+        <a href="#projects" class="hover:text-black transition">
+          Proyectos
+        </a>
+
+        <a href="#about" class="hover:text-black transition">
+          Sobre mí
+        </a>
+
+        <a href="#contact" class="hover:text-black transition">
+          Contacto
+        </a>
+
+      </div>
+
+      <p class="text-gray-500 text-sm">
+        © 2026 Luxury Portfolio
+      </p>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
